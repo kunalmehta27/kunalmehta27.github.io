@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Excel Find and Replace</title>
+    <meta charset="utf-8">
+    <script src="../Replace_excel/jquery-1.10.2.min.js"></script>
+    <script src="../Replace_excel/scripts.js"></script>
+    <script>
+      function replace_all() {
+        var input = $("#text-input").val()
+        var find1 = new RegExp($("#find1").val(),"g");
+        var replace1 = $("#replace1").val();
+        var output1 = input.replace(find1,replace1);
+        var find2 = new RegExp($("#find2").val(),"g");
+        var replace2 = $("#replace2").val();
+        var output2 = output1.replace(find2,replace2);
+        var find3 = new RegExp ($("#find3").val(),"g");
+        var replace3 = $("#replace3").val();
+        var output3 = output2.replace(find3,replace3);
+        $("#text-output").val(output3);
+      }
+    </script>
+
+  </head>
+
+  <body style = "height: 100%; width: 100%;">
+    <div>
+      <h1>Excel find and replace</h1>
+      <textarea id = "text-input" cols = "30" rows = "10"></textarea>
+        <table>
+          <tr>
+            <th>Text to find</th>
+            <th>Text to replace</th>
+          </tr>
+          <tr>
+            <td><input id="find1" placeholder="Text to find." type="text"></input></td>
+            <td><input id ="replace1" placeholder = "Text to replace." type = "text"></td>
+          </tr>
+          <tr>
+            <td><input id="find2" placeholder="Text to find." type="text"></input></td>
+            <td><input id ="replace2" placeholder = "Text to replace." type = "text"></td>
+          </tr>
+          <tr>
+            <td><input id="find3" placeholder="Text to find." type="text"></input></td>
+            <td><input id ="replace3" placeholder = "Text to replace." type = "text"></td>
+          </tr>
+        </table>
+        <div id = "button" onclick = "replace_all()" style = "cursor: pointer; width: 100px; height: 20px; background-color: blue">
+          <p style = "color: white; text-align: center;">Submit</p>
+        </div>
+        <textarea id = "text-output" cols = "30" rows = "10"></textarea>
+      </div>
+  </body>
+</html>
